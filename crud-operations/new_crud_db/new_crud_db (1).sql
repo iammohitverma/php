@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 10, 2021 at 06:12 PM
+-- Generation Time: Aug 11, 2021 at 05:50 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -33,16 +33,17 @@ CREATE TABLE IF NOT EXISTS `students` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `name`, `country`, `subject`) VALUES
-(26, 'Mohit Verma', 'australia', 'ghbghgth2aa');
+INSERT INTO `students` (`id`, `name`, `country`, `image`, `subject`) VALUES
+(35, 'Mohit Verma', 'australia', 'uploaded-images/', 'aaa');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

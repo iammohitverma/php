@@ -18,6 +18,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Country</th>
+                    <th>Image</th>
                     <th>Subject</th>
                     <th colspan="2">Operation</th>
                 </tr>            
@@ -53,6 +54,8 @@
 
                                 "<td> ". $row["country"]. "</td>" . 
                                 
+                                "<td> <img src='" . $row["image"]. "'></td>" .
+
                                 "<td> ". $row["subject"]. "</td>" .
 
                                 "<td> <a href='./update.php?id=$row[id]' class='icon'> <img src='./images/edit.svg'> </a> </td>" .

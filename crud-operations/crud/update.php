@@ -52,6 +52,11 @@ include "connection.php";
             </div>
 
             <div class="input-wrap">
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image" value="<?php $updateresult['image'];?>">
+            </div>
+
+            <div class="input-wrap">
                 <label for="subject">Subject</label>
                 <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" value="<?php echo $updateresult['subject'];?>"><?php echo $updateresult['subject'];?></textarea>
             </div>
@@ -73,10 +78,19 @@ include "connection.php";
                     $subject = $_POST['subject'];
 
 
+                    $file_name = $_FILES["image"]["name"];
 
-                    if($name!== "" && $country!== "" && $subject !== ""){
+                    $file_tmp_name = $_FILES["image"]["tmp_name"];
+            
+                    $uploaded_image = "uploaded-images/" . $file_name;
+            
+                    move_uploaded_file($file_tmp_name, $uploaded_image);
 
-                        $update_query = "UPDATE students SET name= '$name',country='$country',subject='$subject' WHERE id = {$id}";
+
+
+                    if($name!== "" && $country!== "" && $file_name!=="" && $subject !== ""){
+
+                        $update_query = "UPDATE students SET name= '$name',country='$country', image='$uploaded_image',subject='$subject' WHERE id = {$id}";
 
 
                         // Check updation

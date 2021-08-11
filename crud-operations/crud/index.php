@@ -20,7 +20,7 @@ include "connection.php";
         <h1 class="title">Form</h1>
 
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <div class="input-wrap">
                 <label for="name">Name</label>
@@ -34,6 +34,11 @@ include "connection.php";
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option>
                 </select>
+            </div>
+
+            <div class="input-wrap">
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image">
             </div>
 
             <div class="input-wrap">
@@ -53,6 +58,9 @@ include "connection.php";
   
   <?php
 
+//   error_reporting(0);
+
+  
     if(isset($_POST['submit'])){
 
         $name = $_POST['name'];
@@ -61,11 +69,31 @@ include "connection.php";
 
         $subject = $_POST['subject'];
 
+        
+        // Insert image
+
+        // if(isset($_FILES['image'])){
+
+            // echo "<pre>";
+            
+            // print_r ( $_FILES["image"] );
+    
+            // echo "</pre>";
+    
+            $file_name = $_FILES["image"]["name"];
+
+            $file_tmp_name = $_FILES["image"]["tmp_name"];
+    
+            $uploaded_image = "uploaded-images/" . $file_name;
+    
+            move_uploaded_file($file_tmp_name, $uploaded_image);
+    
+        // }
 
 
-        if($name!== "" && $country!== "" && $subject !== ""){
+        if($name!== "" && $country!== "" && $file_name !=="" && $subject !== ""){
 
-            $insert_query = "INSERT INTO students(name, country, subject) VALUES ('$name', '$country', '$subject' )";
+            $insert_query = "INSERT INTO students(name, country, image, subject) VALUES ('$name', '$country', '$uploaded_image', '$subject' )";
 
             $insertion_done = mysqli_query($conn, $insert_query);
 
