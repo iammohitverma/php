@@ -1,0 +1,98 @@
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;margin: 0;padding: 0;}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 100px 20px;
+}
+.title {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+}
+form {
+    max-width: 1320px;
+    margin: auto;
+}
+.input-wrap {
+    margin-bottom: 20px;
+}
+label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+form input, form textarea, form select, form .btn {
+    min-height: 60px;
+    font-size: 18px;
+    outline: none;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    min-height: 60px;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+}
+a.btn {
+    float: right;
+}
+.btn:hover {
+  background-color: #45a049;
+}
+.table-wrap {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 100px 20px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+table {width: 1320px;margin: auto;border-collapse: collapse;background: #fff;}
+
+table th, table td {
+    padding: 15px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #d4d4d4;
+}
+
+
+table th {
+    background: #04AA6D;
+    color: #fff;
+    padding: 15px 10px;
+    font-size: 18px;
+}
+
+table td a {
+    display: inline-block;
+}
+table img{
+    width: 50px;
+}
+form img {
+    max-width: 100px;
+    display: block;
+}
+</style>
