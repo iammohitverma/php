@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.db_sec {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding: 100px 0;
+}
+
+button ion-icon {
+    pointer-events: none;
+}
