@@ -1,22 +1,15 @@
 <?php
+include "connection.php";
 
 $searchVal = $_POST['searchVal'];
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test_db";
+$sql = "SELECT id FROM `test_registered` 
+        WHERE name LIKE '%$searchVal%'
+        OR email LIKE '%$searchVal%'
+        OR phone LIKE '%$searchVal%'
+        OR id LIKE '%$searchVal%' ";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT id FROM `test_registered` WHERE name LIKE '%$searchVal%'";
 $result = mysqli_query($conn, $sql);
 
 $rowsFound = "";
